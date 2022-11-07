@@ -1,9 +1,15 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
 var pdfDoc = null;
 var scale = 1; //Set Scale for zooming PDF.
 var resolution = 1; //Set Resolution to Adjust PDF clarity.
+
+
+
 
 function LoadPdfFromUrl(url) {
     //Read PDF from URL.
@@ -20,6 +26,10 @@ function LoadPdfFromUrl(url) {
         }
     });
 };
+
+
+
+
 
 function RenderPage(pdf_container, num) {
     pdfDoc.getPage(num).then(function(page) {
